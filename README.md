@@ -3,6 +3,7 @@
 1: Hur har nettoförmögenheten per hushåll ökat jämfört med inflation?
 
 2: Vad är andelen som fortsätter studier efter studentexamen jämfört med de som börjar jobba + mellanår?
+Länk: https://pxdata.stat.fi/PxWeb/pxweb/sv/StatFin/StatFin__khak/statfin_khak_pxt_13tq.px/chart/chartViewLine/
 
 3: Hur snabbt har Finlands CO2-utsläpp minskat?
 https://pxdata.stat.fi/PxWeb/pxweb/sv/StatFin/StatFin__khki/statfin_khki_pxt_122d.px/chart/chartViewLine/
