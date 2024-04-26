@@ -5,3 +5,5 @@
 2: Vad är andelen som fortsätter studier efter studentexamen jämfört med de som börjar jobba + mellanår?
 
 3: Hur snabbt har Finlands CO2-utsläpp minskat?
+
+4: Har inkomst något samband med användningen av rösträtten i politiska val såsom Presidentvalet 2024?
