@@ -18,3 +18,5 @@ Länk: https://pxdata.stat.fi/PxWeb/pxweb/sv/StatFin/StatFin__merek/statfin_mere
 6: Ökar elpris till hushåll snabbare än inflation?
 Länk: https://pxdata.stat.fi/PxWeb/pxweb/sv/StatFin/StatFin__ehi/statfin_ehi_pxt_13rb.px/
 
+7. hur mycket har priset för att värma hem ökat med de senate 10 åren?
+
