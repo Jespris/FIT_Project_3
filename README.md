@@ -1,6 +1,7 @@
 # FIT_Project_3
 
 1: Hur har nettoförmögenheten per hushåll ökat jämfört med inflation?
+Länk: https://pxdata.stat.fi/PxWeb/pxweb/sv/StatFin/StatFin__vtutk/statfin_vtutk_pxt_136m.px/chart/chartViewLine/
 
 2: Vad är andelen som fortsätter studier efter studentexamen jämfört med de som börjar jobba + mellanår?
 Länk: https://pxdata.stat.fi/PxWeb/pxweb/sv/StatFin/StatFin__khak/statfin_khak_pxt_13tq.px/chart/chartViewLine/
