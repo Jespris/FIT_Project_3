@@ -11,3 +11,5 @@
 5: Köper Finländare mera begagnade fordon än nya, och hur har det utvecklats genom åren?
 
 6: Ökar elpris till hushåll snabbare än inflation?
+Länk: https://pxdata.stat.fi/PxWeb/pxweb/sv/StatFin/StatFin__ehi/statfin_ehi_pxt_13rb.px/
+
