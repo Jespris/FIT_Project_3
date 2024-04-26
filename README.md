@@ -7,6 +7,7 @@
 3: Hur snabbt har Finlands CO2-utsläpp minskat?
 
 4: Har inkomst något samband med användningen av rösträtten i politiska val såsom Presidentvalet 2024?
+Länk: https://pxdata.stat.fi/PxWeb/pxweb/sv/StatFin/StatFin__pvaa/statfin_pvaa_pxt_14nn.px/table/tableViewLayout1/
 
 5: Köper Finländare mera begagnade fordon än nya, och hur har det utvecklats genom åren?
 Länk: https://pxdata.stat.fi/PxWeb/pxweb/sv/StatFin/StatFin__merek/statfin_merek_pxt_11cb.px/
