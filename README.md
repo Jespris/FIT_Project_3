@@ -21,3 +21,5 @@ Länk: https://pxdata.stat.fi/PxWeb/pxweb/sv/StatFin/StatFin__ehi/statfin_ehi_px
 7. hur mycket har priset för att värma hem ökat med de senate 10 åren?
 https://pxdata.stat.fi/PxWeb/pxweb/sv/StatFin/StatFin__ehi/statfin_ehi_pxt_13nl.px/
 
+8: Hur ökar den genomsnitta hyreskostanden per m^2 i gemförelse med inkomst
+Länk: https://pxdata.stat.fi/PxWeb/pxweb/sv/StatFin/StatFin__asvu/statfin_asvu_pxt_11x4.px/
