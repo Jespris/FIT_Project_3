@@ -1,7 +1,8 @@
 import json
 import matplotlib.pyplot as plt
 
-
+#8: Hur ökar den genomsnitta hyreskostanden per m^2 i gemförelse med inkomst
+#Länk: https://pxdata.stat.fi:443/PxWeb/api/v1/sv/StatFin/asvu/statfin_asvu_pxt_11x4.px
 # Load the JSON data from the file
 def load_data_question_7(filepath):
     # open opens files
@@ -13,11 +14,11 @@ def load_data_question_7(filepath):
 
 
 # Extract and process the energy price data
-def extractAndProcessData_question_7(data):
+def extractAndProcessData_question_7(data_question_7):
     prices_by_year = {}
     #prices_by_year is an dictonary not an array
     # Iterate over the data
-    for item in data['data']:
+    for item in data_question_7['data']:
         # [0][:4] extract a substring from a string located at a specific index in a list
         # extracts the first four characters of the string.
         yearMonth = item['key'][0][:4]  # Extract the year from the 'key' which is in the format 'YYYYMM'
