@@ -7,7 +7,7 @@ import numpy as np
 
 def question_3():
     print("Fråga 3: Hur snabbt har Finlands CO2-utsläpp minskat?")
-    print("Länk till data: https://pxdata.stat.fi/PxWeb/pxweb/sv/StatFin/StatFin__khki/statfin_khki_pxt_122d.px/chart/chartViewLine/")
+    print("Länk till data: https://pxdata.stat.fi/PxWeb/pxweb/sv/StatFin/StatFin__khki/statfin_khki_pxt_122d.px")
 
     emission_data = get_stats()
     # print(f"Data: {emission_data}")
