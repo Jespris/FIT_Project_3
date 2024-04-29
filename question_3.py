@@ -10,31 +10,41 @@ def question_3():
     print("Länk till data: https://pxdata.stat.fi/PxWeb/pxweb/sv/StatFin/StatFin__khki/statfin_khki_pxt_122d.px/chart/chartViewLine/")
 
     emission_data = get_stats()
-    print(f"Data: {emission_data}")
+    # print(f"Data: {emission_data}")
     emission_over_year = parse_data(emission_data)  # dictionary of emissions over year
-    show_data(emission_over_year)
     analyse_data(emission_over_year)
 
 
 def analyse_data(emission_over_year):
-    pass
+    # Create numpy arrays
+    years = np.array(list(map(int, emission_over_year.keys())))
+    emissions = np.array(list(emission_over_year.values()))
 
+    # Beräkna polynomiska koefficienter för en trendlinje av grad 2 (kvadratisk)
+    coefficients = np.polyfit(years, emissions, 2)
 
-def show_data(emission_over_year: {str: int}):
-    years = emission_over_year.keys()
-    emissions = emission_over_year.values()
+    # Skapa en polynomisk funktion baserat på koefficienterna
+    polynomial = np.poly1d(coefficients)
 
-    # plot the data
+    # Plotta data och trendlinje
     plt.figure(figsize=(10, 6))
-    plt.plot(years, emissions, marker='o', linestyle='-')
+    plt.plot(years, emissions, marker='o', linestyle='-', label='Utsläpp')
+    plt.plot(years, polynomial(years), color='red', label='Trendlinje')
     plt.title('Växthusgasutsläpp i Finland, 1990-2022')
     plt.xlabel('År')
     plt.ylabel('Utsläpp (tusen ton CO2-ekv.)')
     plt.xticks(rotation=45)  # Rotera x-axelns tick-märken för bättre läsbarhet
+    plt.legend()
     plt.grid(True)
     plt.tight_layout()
 
+    # Visa plotten
     plt.show()
+
+    # Beräkna när utsläppen når noll genom att lösa ekvationen
+    roots = polynomial.roots
+    print(f"Trendlinjens rötter: {roots}")
+    print(f"Utsläppen förväntas bli noll år {round(roots[0])}")
 
 
 def parse_data(data) -> {str: int}:
