@@ -6,17 +6,17 @@ Albert Valeev.
 
 
 '''
+import csv
 import json
+import os.path
+import urllib.request
+from datetime import datetime
+
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
-from datetime import datetime
-import urllib.request, json
-import os.path
-import csv
 
-
-scandinavian_countries = ["Sweden", "Denmark", "Norway"] # lista med skandinaviska länder
+scandinavian_countries = ["Sweden", "Denmark", "Norway"]  # lista med skandinaviska länder
 
 
 def main(): 
