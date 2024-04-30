@@ -1,0 +1,179 @@
+{
+  "columns": [
+    {
+      "code": "Vuosi",
+      "text": "År",
+      "type": "t"
+    },
+    {
+      "code": "Alue",
+      "text": "Område",
+      "type": "d"
+    },
+    {
+      "code": "Sukupuoli",
+      "text": "Kön",
+      "type": "d"
+    },
+    {
+      "code": "Tulokvintiili",
+      "text": "Inkomstkvintil",
+      "type": "d"
+    },
+    {
+      "code": "Kierros",
+      "text": "Omgång",
+      "type": "d"
+    },
+    {
+      "code": "aoiky_pvaa",
+      "text": "Röstberättigade i presidentvalet (hela landet), antal",
+      "type": "c"
+    },
+    {
+      "code": "a_al_pvaa",
+      "text": "Uppgift om användning av rösträtt i presidentvalet: väljare i områdena, antal",
+      "type": "c"
+    }
+  ],
+  "comments": [],
+  "data": [
+    {
+      "key": [
+        "2024",
+        "SSS",
+        "SSS",
+        "01",
+        "1"
+      ],
+      "values": [
+        "855113",
+        "286082"
+      ]
+    },
+    {
+      "key": [
+        "2024",
+        "SSS",
+        "SSS",
+        "01",
+        "2"
+      ],
+      "values": [
+        "855113",
+        "264144"
+      ]
+    },
+    {
+      "key": [
+        "2024",
+        "SSS",
+        "SSS",
+        "02",
+        "1"
+      ],
+      "values": [
+        "855080",
+        "314294"
+      ]
+    },
+    {
+      "key": [
+        "2024",
+        "SSS",
+        "SSS",
+        "02",
+        "2"
+      ],
+      "values": [
+        "855080",
+        "295555"
+      ]
+    },
+    {
+      "key": [
+        "2024",
+        "SSS",
+        "SSS",
+        "03",
+        "1"
+      ],
+      "values": [
+        "855112",
+        "342851"
+      ]
+    },
+    {
+      "key": [
+        "2024",
+        "SSS",
+        "SSS",
+        "03",
+        "2"
+      ],
+      "values": [
+        "855112",
+        "322248"
+      ]
+    },
+    {
+      "key": [
+        "2024",
+        "SSS",
+        "SSS",
+        "04",
+        "1"
+      ],
+      "values": [
+        "854986",
+        "368411"
+      ]
+    },
+    {
+      "key": [
+        "2024",
+        "SSS",
+        "SSS",
+        "04",
+        "2"
+      ],
+      "values": [
+        "854986",
+        "346346"
+      ]
+    },
+    {
+      "key": [
+        "2024",
+        "SSS",
+        "SSS",
+        "05",
+        "1"
+      ],
+      "values": [
+        "855026",
+        "402623"
+      ]
+    },
+    {
+      "key": [
+        "2024",
+        "SSS",
+        "SSS",
+        "05",
+        "2"
+      ],
+      "values": [
+        "855026",
+        "388217"
+      ]
+    }
+  ],
+  "metadata": [
+    {
+      "label": "Uppgift om användning av rösträtt : valdeltagandet efter inkomstkvintil och kön i presidentval efter År, Område, Kön, Inkomstkvintil, Omgång och Uppgifter",
+      "source": "Statistikcentralen, presidentval",
+      "updated": "2024-04-19T05.00.00Z"
+    }
+  ]
+}
