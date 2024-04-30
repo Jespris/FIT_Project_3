@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 from research_data_utils import load_json_data
 
 
-# 8: Hur ökar den genomsnitta hyreskostanden per m^2 i gemförelse med inkomst
+# 8: Hur ökar den genomsnitta hyreskostnaden per m^2 i jämförelse med inkomst
 # Länk: https://pxdata.stat.fi:443/PxWeb/api/v1/sv/StatFin/asvu/statfin_asvu_pxt_11x4.px
 
 
@@ -16,7 +16,7 @@ def question_7():
 # Extract and process the energy price data
 def extract_and_process_data_question_7(data):
     prices_by_year = {}
-    # prices_by_year is a dictonary not an array
+    # prices_by_year is a dictionary not an array
     # Iterate over the data
     for item in data['data']:
         # [0][:4] extract a substring from a string located at a specific index in a list
@@ -24,7 +24,7 @@ def extract_and_process_data_question_7(data):
         year_month = item['key'][0][:4]  # Extract the year from the 'key' which is in the format 'YYYYMM'
         price = float(item['values'][0])  # Convert price to float
 
-        # checks if yearMonth is in prices_by_year
+        # checks if yearMonth is in prices_by_year.
         # The if-else structure checks if the extracted yearMonth already exists as a key in the prices_by_year dictionary.
         if year_month in prices_by_year:  # checks if yearMonth key exists in the prices_by_year dictionary
             prices_by_year[year_month].append(price)
