@@ -1,0 +1,251 @@
+{
+    "version": "2.0",
+    "class": "dataset",
+    "label": "V\u00e4xthusgasutsl\u00e4pp i Finland efter \u00c5r, Utsl\u00e4ppsklass, V\u00e4xthusgas och Uppgifter",
+    "source": "Statistikcentralen, v\u00e4xthusgaser",
+    "updated": "2024-03-15T06:00:00Z",
+    "note": [
+        "<A HREF='https://stat.fi/sv/statistik/dokumentation/khki' TARGET=_blank>Dokumentation f\u00f6r statistiken</A>",
+        ". uppgift saknas\r\n- v\u00e4rdet noll",
+        "Utsl\u00e4ppsm\u00e4ngd uttryckt i koldioxidekvivalenter, negativa tal avser upptag. ",
+        "De olika v\u00e4xthusgasernas v\u00e4rmande effekt p\u00e5 klimatet omvandlas till j\u00e4mf\u00f6rbara koldioxidekvivalenter genom att anv\u00e4nda s\u00e5 kallade GWP (global warming potential)-koefficienter. Som k\u00e4lla f\u00f6r koefficienterna anv\u00e4nds IPCC:s utv\u00e4rderingsrapporter. Utsl\u00e4ppsdata enligt f\u00f6rkortningen AR5 har ber\u00e4knats med hj\u00e4lp av koefficienterna i IPCC:s femte utv\u00e4rderingsrapport (koldioxid 1, metan 28, dikv\u00e4veoxid 265, F-gaser 4-23 500)."
+    ],
+    "role": {
+        "time": [
+            "Vuosi"
+        ],
+        "metric": [
+            "Tiedot"
+        ]
+    },
+    "id": [
+        "Vuosi",
+        "P\u00e4\u00e4st\u00f6luokka",
+        "Kasvihuonekaasu",
+        "Tiedot"
+    ],
+    "size": [
+        33,
+        1,
+        1,
+        1
+    ],
+    "dimension": {
+        "Vuosi": {
+            "label": "\u00c5r",
+            "category": {
+                "index": {
+                    "1990": 0,
+                    "1991": 1,
+                    "1992": 2,
+                    "1993": 3,
+                    "1994": 4,
+                    "1995": 5,
+                    "1996": 6,
+                    "1997": 7,
+                    "1998": 8,
+                    "1999": 9,
+                    "2000": 10,
+                    "2001": 11,
+                    "2002": 12,
+                    "2003": 13,
+                    "2004": 14,
+                    "2005": 15,
+                    "2006": 16,
+                    "2007": 17,
+                    "2008": 18,
+                    "2009": 19,
+                    "2010": 20,
+                    "2011": 21,
+                    "2012": 22,
+                    "2013": 23,
+                    "2014": 24,
+                    "2015": 25,
+                    "2016": 26,
+                    "2017": 27,
+                    "2018": 28,
+                    "2019": 29,
+                    "2020": 30,
+                    "2021": 31,
+                    "2022": 32
+                },
+                "label": {
+                    "1990": "1990",
+                    "1991": "1991",
+                    "1992": "1992",
+                    "1993": "1993",
+                    "1994": "1994",
+                    "1995": "1995",
+                    "1996": "1996",
+                    "1997": "1997",
+                    "1998": "1998",
+                    "1999": "1999",
+                    "2000": "2000",
+                    "2001": "2001",
+                    "2002": "2002",
+                    "2003": "2003",
+                    "2004": "2004",
+                    "2005": "2005",
+                    "2006": "2006",
+                    "2007": "2007",
+                    "2008": "2008",
+                    "2009": "2009",
+                    "2010": "2010",
+                    "2011": "2011",
+                    "2012": "2012",
+                    "2013": "2013",
+                    "2014": "2014",
+                    "2015": "2015",
+                    "2016": "2016",
+                    "2017": "2017",
+                    "2018": "2018",
+                    "2019": "2019",
+                    "2020": "2020",
+                    "2021": "2021",
+                    "2022": "2022"
+                }
+            },
+            "extension": {
+                "elimination": false,
+                "show": "value"
+            },
+            "link": {
+                "describedby": [
+                    {
+                        "extension": {
+                            "Vuosi": "SCALE-TYPE=None"
+                        }
+                    }
+                ]
+            }
+        },
+        "P\u00e4\u00e4st\u00f6luokka": {
+            "label": "Utsl\u00e4ppsklass",
+            "note": [
+                "Baserar sig p\u00e5 utsl\u00e4ppsklass enligt CRF-klassificeringen, som anv\u00e4nds vid rapporteringen av v\u00e4xthusgaser till klimatavtalet och EU. \r\nPreciseringar av utsl\u00e4ppsklass per sektor:\r\nEnergi: Uppgifterna om utrikestrafiken (1D) ing\u00e5r inte i v\u00e4xthusgasinventeringens totala utsl\u00e4ppsm\u00e4ngder, utan de anges som till\u00e4ggsinformation.\r\nJordbruk: Direkta utsl\u00e4pp av lustgas fr\u00e5n brukad mark (3Da) inkluderar endast N2O-utsl\u00e4pp. F\u00f6r\u00e4ndringar i kollager, dvs. CO2-utsl\u00e4pp eller -upptag, rapporteras inom sektorn markanv\u00e4ndning, f\u00f6r\u00e4ndrad markanv\u00e4ndning och skogsbruk (LULUCF).\r\nJordbruk: Indirekta utsl\u00e4pp av lustgas fr\u00e5n brukad mark (3Db) inkluderar utsl\u00e4pp av lustgas fr\u00e5n kv\u00e4venedfall och kv\u00e4vel\u00e4ckage fr\u00e5n jordbrukets kv\u00e4veanv\u00e4ndning.\r\nMarkanv\u00e4ndning, f\u00f6r\u00e4ndrad markanv\u00e4ndning och skogsbruk (LULUCF): Indirekta utsl\u00e4pp av lustgas (4(iv)) inkluderar utsl\u00e4pp av lustgas fr\u00e5n kv\u00e4vel\u00e4ckage fr\u00e5n f\u00f6r\u00e4ndrad markanv\u00e4ndning av mineralmarker till \u00e5kermark eller gr\u00e4smark. Utsl\u00e4pp av lustgas fr\u00e5n kv\u00e4venedfall och kv\u00e4vel\u00e4ckage fr\u00e5n jordbrukets kv\u00e4veanv\u00e4ndning p\u00e5 brukad mark rapporteras inom jordbrukssektorn i klassen indirekta utsl\u00e4pp av lustgas fr\u00e5n brukad mark (3Db)."
+            ],
+            "category": {
+                "index": {
+                    "0A": 0
+                },
+                "label": {
+                    "0A": "Utsl\u00e4ppen utan LULUCF"
+                }
+            },
+            "extension": {
+                "elimination": false,
+                "show": "value"
+            },
+            "link": {
+                "describedby": [
+                    {
+                        "extension": {
+                            "P\u00e4\u00e4st\u00f6luokka": "SCALE-TYPE=nominal"
+                        }
+                    }
+                ]
+            }
+        },
+        "Kasvihuonekaasu": {
+            "label": "V\u00e4xthusgas",
+            "note": [
+                "De v\u00e4xthusgaser som ska rapporteras i inventeringen av v\u00e4xthusgaser \u00e4r koldioxid CO2, metan CH4, dikv\u00e4veoxid N2O samt fluorerade v\u00e4xthusgaser, dvs. F-gaser (HFC-f\u00f6reningar (fluorkolv\u00e4ten), PFC-f\u00f6reningar (perfluorkolv\u00e4ten), svavelhexafluorid SF6 och kv\u00e4vetrifluorid NF3)."
+            ],
+            "category": {
+                "index": {
+                    "SS": 0
+                },
+                "label": {
+                    "SS": "Totalt"
+                }
+            },
+            "extension": {
+                "elimination": true,
+                "eliminationValueCode": "SS",
+                "show": "value"
+            },
+            "link": {
+                "describedby": [
+                    {
+                        "extension": {
+                            "Kasvihuonekaasu": "SCALE-TYPE=nominal"
+                        }
+                    }
+                ]
+            }
+        },
+        "Tiedot": {
+            "label": "Uppgifter",
+            "category": {
+                "index": {
+                    "emission_ar5": 0
+                },
+                "label": {
+                    "emission_ar5": "Utsl\u00e4pp, tusen ton CO2-ekv. (GWP=AR5)"
+                },
+                "unit": {
+                    "emission_ar5": {
+                        "base": "Tusen ton CO2-ekv.",
+                        "decimals": 0
+                    }
+                }
+            },
+            "extension": {
+                "elimination": false,
+                "show": "value"
+            }
+        }
+    },
+    "extension": {
+        "px": {
+            "tableid": "statfin_khki_pxt_138v",
+            "decimals": 0,
+            "official-statistics": true,
+            "aggregallowed": true,
+            "language": "fi",
+            "description": "138v -- V\u00e4xthusgasutsl\u00e4pp i Finland, 1990-2022",
+            "matrix": "001_138v_2022",
+            "subject-code": "KHKI"
+        },
+        "contact": [
+            {
+                "raw": "<A HREF='https://stat.fi/sv/statistik/khki' TARGET=_blank>Statistikens webbsidor</A>"
+            }
+        ]
+    },
+    "value": [
+        71331,
+        69247,
+        67869,
+        70077,
+        75646,
+        71890,
+        77881,
+        76539,
+        72846,
+        72162,
+        70220,
+        75537,
+        77935,
+        85521,
+        81757,
+        69713,
+        81085,
+        79413,
+        71260,
+        67630,
+        75468,
+        67720,
+        62177,
+        62646,
+        58461,
+        54961,
+        57810,
+        55003,
+        55934,
+        52646,
+        47654,
+        47604,
+        45700
+    ]
+}

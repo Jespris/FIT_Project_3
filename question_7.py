@@ -1,38 +1,39 @@
-import json
 import matplotlib.pyplot as plt
+from research_data_utils import load_json_data
 
-#8: Hur ökar den genomsnitta hyreskostanden per m^2 i gemförelse med inkomst
-#Länk: https://pxdata.stat.fi:443/PxWeb/api/v1/sv/StatFin/asvu/statfin_asvu_pxt_11x4.px
-# Load the JSON data from the file
-def load_data_question_7(filepath):
-    # open opens files
-    # r tells open to read data
-    with open(filepath, 'r', encoding='utf-8') as file:
-        # json.load converts json into python dictonary
-        data_question_7 = json.load(file)
-    return data_question_7
+
+# 8: Hur ökar den genomsnitta hyreskostanden per m^2 i gemförelse med inkomst
+# Länk: https://pxdata.stat.fi:443/PxWeb/api/v1/sv/StatFin/asvu/statfin_asvu_pxt_11x4.px
+
+
+def question_7():
+    # question 7
+    data_question_7 = load_json_data('question_7_data.json')
+    average_prices_by_year = extract_and_process_data_question_7(data_question_7)
+    plot_data_question_7(average_prices_by_year)
 
 
 # Extract and process the energy price data
-def extractAndProcessData_question_7(data_question_7):
+def extract_and_process_data_question_7(data):
     prices_by_year = {}
-    #prices_by_year is an dictonary not an array
+    # prices_by_year is a dictonary not an array
     # Iterate over the data
-    for item in data_question_7['data']:
+    for item in data['data']:
         # [0][:4] extract a substring from a string located at a specific index in a list
         # extracts the first four characters of the string.
-        yearMonth = item['key'][0][:4]  # Extract the year from the 'key' which is in the format 'YYYYMM'
+        year_month = item['key'][0][:4]  # Extract the year from the 'key' which is in the format 'YYYYMM'
         price = float(item['values'][0])  # Convert price to float
 
         # checks if yearMonth is in prices_by_year
         # The if-else structure checks if the extracted yearMonth already exists as a key in the prices_by_year dictionary.
-        if yearMonth in prices_by_year: # checks if yearMonth key exists in the prices_by_year dictionary
-            prices_by_year[yearMonth].append(price) # if the year is in prices_by_year dictionary the this appends price to year
+        if year_month in prices_by_year:  # checks if yearMonth key exists in the prices_by_year dictionary
+            prices_by_year[year_month].append(price)
+            # if the year is in prices_by_year dictionary this appends price to year
         else:
-            prices_by_year[yearMonth] = [price]
+            prices_by_year[year_month] = [price]
 
     # Calculate the average price for each year
-    #prices_by_year.items() is a touple
+    # prices_by_year.items() is a tuple
     average_prices_by_year = {year: sum(prices) / len(prices) for year, prices in prices_by_year.items()}
     return average_prices_by_year
 

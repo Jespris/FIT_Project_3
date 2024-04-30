@@ -1,13 +1,16 @@
+import json
+
 import numpy as np
 import requests
 from matplotlib import pyplot as plt
-
+import os
+from research_data_utils import load_json_data, save_json_data, DATA_FOLDER
 
 def question_1():
     print("Fråga 1: Hur har nettoförmögenheten per hushåll ökat jämfört med inflation?")
     print("Länk till data: https://pxdata.stat.fi/PxWeb/pxweb/sv/StatFin/StatFin__vtutk/statfin_vtutk_pxt_136m.px")
 
-    household_income_data, inflation_data = retrieve_data()
+    household_income_data, inflation_data = get_data()
     # print(household_income_data)
     year_net_assets = parse_household_data(household_income_data)
     # print(f"Nettoinkomst över år: {year_net_assets}")
@@ -115,6 +118,14 @@ def parse_household_data(data):
     return year_net_assets
 
 
+def get_data():
+    # house_path = f"{DATA_FOLDER}/question_1_data.json"
+    # inflation_path = f"{DATA_FOLDER}/inflation_data.json"
+    # if os.path.exists(house_path) and os.path.exists(inflation_path):
+    print("Data already saved, retrieving from research_data folder...")
+    return load_json_data("question_1_data.json"), load_json_data("inflation_data.json")
+
+
 def retrieve_data():
     print("Requesting data...")
     household_url = "https://pxdata.stat.fi:443/PxWeb/api/v1/sv/StatFin/vtutk/statfin_vtutk_pxt_136m.px"
@@ -158,6 +169,14 @@ def retrieve_data():
 
     if house_response.status_code == 200:
         print("Data request successful!")
+        # save the data to the research data folder
+        data_path = os.path.join(DATA_FOLDER, "question_1_data.json")
+        # format the data for readability
+        json_string = json.dumps(house_response.json(), indent=4)
+        # write to the file
+        with open(data_path, "w") as json_file:
+            json_file.write(json_string)
+        print(f"JSON file saved to {data_path}")
     else:
         print("Failed to get data :/")
 
@@ -184,6 +203,14 @@ def retrieve_data():
 
     if inflation_response.status_code == 200:
         print("Data request successful!")
+        # save the data to the research data folder
+        data_path = os.path.join(DATA_FOLDER, "inflation_data.json")
+        # format the data for readability
+        json_string = json.dumps(inflation_response.json(), indent=4)
+        # write to the file
+        with open(data_path, "w") as json_file:
+            json_file.write(json_string)
+        print(f"JSON file saved to {data_path}")
     else:
         print("Failed to get data :/")
 

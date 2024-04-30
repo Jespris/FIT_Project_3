@@ -3,6 +3,7 @@ import csv
 import requests
 import matplotlib.pyplot as plt
 import numpy as np
+from research_data_utils import load_json_data, save_json_data, DATA_FOLDER
 
 
 def question_3():
@@ -62,6 +63,10 @@ def parse_data(data) -> {str: int}:
 
 
 def get_stats():
+    loaded_data = load_json_data("question_3_data.json")
+    if loaded_data is not None:
+        print("Data already exists, loaded from data folder")
+        return loaded_data
     print("Requesting data...")
     stats_url = "https://pxdata.stat.fi:443/PxWeb/api/v1/sv/StatFin/khki/statfin_khki_pxt_138v.px"
     json_data = {
@@ -95,6 +100,7 @@ def get_stats():
 
     if response.status_code == 200:
         print("Data request successful!")
+        save_json_data(response.json(), "question_3_data.json")
         return response.json()
     else:
         print("Failed to get data :/")

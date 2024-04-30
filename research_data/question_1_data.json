@@ -1,0 +1,183 @@
+{
+    "version": "2.0",
+    "class": "dataset",
+    "label": "Tillg\u00e5ngar, skulder och inkomst efter Statistik, Kotitalouden elinvaihe, \u00c5r och Uppgifter",
+    "source": "Statistikcentralen, hush\u00e5llens f\u00f6rm\u00f6genhet",
+    "updated": "2022-03-25T06:00:00Z",
+    "note": [
+        "28.3.2022. Saknade uppgifter om par utan barn i \u00e5ldern 55 till 64 \u00e5r \u00e4r lagt p\u00e5 kategorierna '2. Par utan barn' och '2.2 Par utan barn, 35-64 \u00e5r'",
+        "<A HREF='https://stat.fi/sv/statistik/dokumentation/vtutk' TARGET=_blank>Dokumentation f\u00f6r statistiken</A>",
+        ". uppgift saknas",
+        "Uppgifterna i euro har angetts i senaste statistik\u00e5rs penningv\u00e4rde. \r\nStatistikenhet: hush\u00e5ll (hush\u00e5llsbefolkning). ",
+        "Uppgifterna f\u00f6r \u00e5ren 1987-2004, 2009, 2013 och 2016-2019 \u00e4r inte helt j\u00e4mf\u00f6rbara sinsemellan. Statistikens metod \u00e4ndrades i betydande grad \u00e5r 2009. ",
+        "Medianv\u00e4rden och kvartiler ber\u00e4knat f\u00f6r dom som har tillg\u00e5ngar. Medeltal \u00e4r per samtliga hush\u00e5ll."
+    ],
+    "role": {
+        "time": [
+            "Vuosi"
+        ],
+        "metric": [
+            "Tiedot"
+        ]
+    },
+    "id": [
+        "Tunnusluku",
+        "Kotitalouden elinvaihe",
+        "Vuosi",
+        "Tiedot"
+    ],
+    "size": [
+        1,
+        1,
+        9,
+        1
+    ],
+    "dimension": {
+        "Tunnusluku": {
+            "label": "Statistik",
+            "category": {
+                "index": {
+                    "Mediaani": 0
+                },
+                "label": {
+                    "Mediaani": "Median"
+                }
+            },
+            "extension": {
+                "elimination": false,
+                "show": "value"
+            },
+            "link": {
+                "describedby": [
+                    {
+                        "extension": {
+                            "Tunnusluku": "SCALE-TYPE=nominal"
+                        }
+                    }
+                ]
+            }
+        },
+        "Kotitalouden elinvaihe": {
+            "label": "Kotitalouden elinvaihe",
+            "category": {
+                "index": {
+                    "SS": 0
+                },
+                "label": {
+                    "SS": "Samtliga hush\u00e5ll"
+                }
+            },
+            "extension": {
+                "elimination": true,
+                "eliminationValueCode": "SS",
+                "show": "value"
+            },
+            "link": {
+                "describedby": [
+                    {
+                        "extension": {
+                            "Kotitalouden elinvaihe": "SCALE-TYPE=nominal"
+                        }
+                    }
+                ]
+            }
+        },
+        "Vuosi": {
+            "label": "\u00c5r",
+            "category": {
+                "index": {
+                    "1987": 0,
+                    "1988": 1,
+                    "1994": 2,
+                    "1998": 3,
+                    "2004": 4,
+                    "2009": 5,
+                    "2013": 6,
+                    "2016": 7,
+                    "2019": 8
+                },
+                "label": {
+                    "1987": "1987",
+                    "1988": "1988",
+                    "1994": "1994",
+                    "1998": "1998",
+                    "2004": "2004",
+                    "2009": "2009",
+                    "2013": "2013",
+                    "2016": "2016",
+                    "2019": "2019"
+                }
+            },
+            "extension": {
+                "elimination": false,
+                "show": "value"
+            },
+            "link": {
+                "describedby": [
+                    {
+                        "extension": {
+                            "Vuosi": "SCALE-TYPE=None"
+                        }
+                    }
+                ]
+            }
+        },
+        "Tiedot": {
+            "label": "Uppgifter",
+            "category": {
+                "index": {
+                    "nettoae_DN3001": 0
+                },
+                "label": {
+                    "nettoae_DN3001": "Nettof\u00f6rm\u00f6genhet"
+                },
+                "note": {
+                    "nettoae_DN3001": [
+                        "Nettof\u00f6rm\u00f6genhet. Inkluderar alla tillg\u00e5ngar som samlats in f\u00f6r unders\u00f6kningen under varje statistik\u00e5r. \r\nDatat\u00e4ckningen varierar och \u00e4r inte direkt j\u00e4mf\u00f6rbar \u00f6ver tiden."
+                    ]
+                },
+                "unit": {
+                    "nettoae_DN3001": {
+                        "base": "euro",
+                        "decimals": 0
+                    }
+                }
+            },
+            "extension": {
+                "elimination": false,
+                "show": "value"
+            }
+        }
+    },
+    "extension": {
+        "noteMandatory": {
+            "0": true
+        },
+        "px": {
+            "tableid": "statfin_vtutk_pxt_136m",
+            "decimals": 0,
+            "official-statistics": true,
+            "aggregallowed": true,
+            "language": "fi",
+            "description": "136m -- Tillg\u00e5ngar, skulder och inkomst efter hush\u00e5llens livsfas, 1987-2019",
+            "matrix": "001_136m_2019",
+            "subject-code": "VTUTK"
+        },
+        "contact": [
+            {
+                "raw": "<A HREF='https://stat.fi/sv/statistik/vtutk' TARGET=_blank>Statistikens webbsidor</A>"
+            }
+        ]
+    },
+    "value": [
+        62179,
+        65369,
+        57742,
+        69656,
+        95909,
+        108802,
+        113272,
+        110304,
+        104000
+    ]
+}
