@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 from research_data_utils import load_json_data
 
 
-# 8: Hur ökar den genomsnitta hyreskostnaden per m^2 i jämförelse med inkomst
+# 7: Hur ökar den genomsnitta hyreskostnaden per m^2 i jämförelse med inkomst
 # Länk: https://pxdata.stat.fi:443/PxWeb/api/v1/sv/StatFin/asvu/statfin_asvu_pxt_11x4.px
 
 

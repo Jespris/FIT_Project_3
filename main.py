@@ -2,6 +2,8 @@ from question_1 import question_1
 from question_3 import question_3
 from question_7 import question_7
 
+from question_9 import question_9
+
 
 def main():
     analyse_everything = True
@@ -13,12 +15,14 @@ def main():
     questions = {
         1: question_1,
         3: question_3,
-        7: question_7
+        7: question_7,
+        9: question_9
     }
 
     if not analyse_everything:
         # Which specific question do you want analysed?
         questions[7]()
+        questions[9]()
     else:
         print("Analysing everything!")
         for value in questions.values():
