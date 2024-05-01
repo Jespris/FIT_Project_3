@@ -23,3 +23,6 @@ https://pxdata.stat.fi/PxWeb/pxweb/sv/StatFin/StatFin__ehi/statfin_ehi_pxt_13nl.
 
 8: Hur ökar den genomsnitta hyreskostanden per m^2 i gemförelse med inkomst
 Länk: https://pxdata.stat.fi:443/PxWeb/api/v1/sv/StatFin/asvu/statfin_asvu_pxt_11x4.px
+
+9: Energiförbrukning inom industri i finland 2010-2023
+Länk: https://pxdata.stat.fi/PxWeb/pxweb/sv/StatFin/StatFin__ehk/statfin_ehk_pxt_12vk.px/
