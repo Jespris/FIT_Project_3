@@ -24,5 +24,8 @@ https://pxdata.stat.fi/PxWeb/pxweb/sv/StatFin/StatFin__ehi/statfin_ehi_pxt_13nl.
 8: Hur ökar den genomsnitta hyreskostanden per m^2 i gemförelse med inkomst
 Länk: https://pxdata.stat.fi:443/PxWeb/api/v1/sv/StatFin/asvu/statfin_asvu_pxt_11x4.px
 
-9: Energiförbrukning inom industri i finland 2010-2023
+9: Hur har energiförbrukning inom industri i finland ändrats från 2010 till 2023?
 Länk: https://pxdata.stat.fi/PxWeb/pxweb/sv/StatFin/StatFin__ehk/statfin_ehk_pxt_12vk.px/
+
+10: Hur har befolkningsförändringen förändrats i finland från 1990 till 2022?
+Länk: https://pxdata.stat.fi/PxWeb/pxweb/sv/StatFin/StatFin__kuol/statfin_kuol_pxt_12au.px/
