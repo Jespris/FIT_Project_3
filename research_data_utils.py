@@ -16,7 +16,7 @@ def save_json_data(data, filepath: str):
     print(f"JSON file saved to: {joined_path}")
 
 
-# USE THIS TO LOAD DATA TO THE RESEARCH_DATA FOLDER
+# USE THIS TO LOAD DATA FROM THE RESEARCH_DATA FOLDER
 def load_json_data(filepath: str):
     # filepath is json file name in the research_data folder
     print(f"Loading {filepath}...")
