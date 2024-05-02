@@ -1,4 +1,5 @@
 from question_1 import question_1
+from question_2 import question_2
 from question_3 import question_3
 from question_4 import question_4
 from question_7 import question_7
@@ -15,6 +16,7 @@ def main():
     # TODO: add all the questions starting function to this dictionary
     questions = {
         1: question_1,
+        2: question_2,
         3: question_3,
         4: question_4,
         7: question_7,
@@ -23,7 +25,7 @@ def main():
 
     if not analyse_everything:
         # Which specific question do you want analysed?
-        questions[4]()
+        questions[2]()
     else:
         print("Analysing everything!")
         for value in questions.values():
