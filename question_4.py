@@ -29,7 +29,7 @@ def analyse_data(votes_by_income):
 
     ax.set_xlabel('Inkomstkvintil')
     ax.set_ylabel('Andel använda rösträtter (%)')
-    ax.set_title('Andel använda rösträtter per inkomstkvintil och omgång')
+    ax.set_title('Andel använda rösträtter per inkomstkvintil och omgång i presidentvalet 2024')
     ax.set_xticks(index + bar_width / 2)
     ax.set_xticklabels(income_quantiles)
     ax.legend()
@@ -65,6 +65,7 @@ def parse_data(data) -> {str: int}:
         else:
             vote_ratio_per_income[income_quantile] = ratio
 
+    print(f"Extracted data: {vote_ratio_per_income}")
     return vote_ratio_per_income
 
 
