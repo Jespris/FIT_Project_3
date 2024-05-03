@@ -1,9 +1,11 @@
 import matplotlib.pyplot as plt
+import numpy as np
+
 from research_data_utils import load_json_data
 
 
-# 7: Hur ökar den genomsnitta hyreskostnaden per m^2 i jämförelse med inkomst
-# Länk: https://pxdata.stat.fi:443/PxWeb/api/v1/sv/StatFin/asvu/statfin_asvu_pxt_11x4.px
+#9: Hur har energiförbrukning inom industri i finland ändrats från 2010 till 2023? Länk: https://pxdata.stat.fi/PxWeb/pxweb/sv/StatFin/StatFin__ehk/statfin_ehk_pxt_12vk.px/
+
 
 
 def question_9():
@@ -34,6 +36,7 @@ def extract_and_process_data_question_9(data):
     # Calculate the average price for each year
     # values_by_year.items() is a tuple
     average_values_by_year = {year: sum(values) / len(values) for year, values in values_by_year.items()}
+    print("Data Loaded:", data)  # Debug: Print the whole data structure
     return average_values_by_year
 
 
@@ -41,8 +44,15 @@ def extract_and_process_data_question_9(data):
 def plot_data_question_9(average_values_by_year):
     years = list(average_values_by_year.keys())
     values = list(average_values_by_year.values())
+    years_numeric = np.array(list(map(int, years)))  # Convert years to numeric for polyfit
+    prices_numeric = np.array(values)
+
+    coefficients = np.polyfit(years_numeric, prices_numeric, 2)  # Quadratic fit
+    polynomial = np.poly1d(coefficients)
 
     plt.figure(figsize=(10, 5))
+    plt.plot(years, values, marker='o', label='Average values')
+    plt.plot(years, polynomial(years_numeric), color='red', label='Trend Line')
     plt.plot(years, values, marker='o')
     plt.title('Average Annual Energy Consumption by Sector')
     plt.xlabel('Year')
