@@ -4,7 +4,8 @@ from research_data_utils import load_json_data
 
 def year_month_to_numeric(year_month):
     year, month = year_month.split('M')
-    return int(year) + (int(month) - 1) / 12
+    return int(year) + (int(month) - 1) / 12 # this gives the code the numeric values that are used in the backend. For example 3/12 comes after 2/12
+# -1 to help convert months into years
 
 
 def question_7(): # main function for question 7
@@ -74,9 +75,11 @@ def plot_data_question_7(average_prices_by_year):
    # years_numeric = np.array(list(map(int, years)))  # Convert years to numeric for polyfit
    # prices_numeric = np.array(prices)
 
-    sorted_years = sorted(average_prices_by_year.keys(), key=lambda x: year_month_to_numeric(x))
-    prices = [average_prices_by_year[ym] for ym in sorted_years]
-    years_numeric = np.array([year_month_to_numeric(ym) for ym in sorted_years])
+# sorts the years and months in chronological order
+    sorted_years = sorted(average_prices_by_year.keys(), key=lambda x: year_month_to_numeric(x)) #Sorted years sets 2020M01 2020M02 etc
+    prices = [average_prices_by_year[ym] for ym in sorted_years] # this tells the code what order the years are in
+    years_numeric = np.array([year_month_to_numeric(ym) for ym in sorted_years]) # converts years into numeric values
+  # Years numeric is the x axis
 
    # coefficients = np.polyfit(years_numeric, prices_numeric, 2)  # Quadratic fit
     #polynomial = np.poly1d(coefficients)
@@ -95,6 +98,11 @@ def plot_data_question_7(average_prices_by_year):
     plt.figure(figsize=(12, 6))
     plt.plot(years_numeric, prices, marker='o', label='Average Price')
     plt.plot(years_numeric, polynomial(years_numeric), color='red', label='Trend Line')
+
+
+    for i, txt in enumerate(prices):
+        plt.annotate(f'{txt:.2f}', (years_numeric[i], prices[i]), textcoords="offset points", xytext=(0, 10), ha='center')
+
     plt.title('Average Monthly Energy Prices for Home Heating')
     plt.xlabel('Year and Month')
     plt.ylabel('Average Price (euro/MWh)')
