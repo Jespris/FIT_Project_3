@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from research_data_utils import load_json_data
-
+from adjustText import adjust_text
 def year_month_to_numeric(year_month):
     year, month = year_month.split('M')
     return int(year) + (int(month) - 1) / 12 # this gives the code the numeric values that are used in the backend. For example 3/12 comes after 2/12
@@ -95,13 +95,13 @@ def plot_data_question_7(average_prices_by_year):
     coefficients = np.polyfit(years_numeric, prices, 2)
     polynomial = np.poly1d(coefficients)
 
-    plt.figure(figsize=(12, 6))
+    plt.figure(figsize=(18, 8))
     plt.plot(years_numeric, prices, marker='o', label='Average Price')
     plt.plot(years_numeric, polynomial(years_numeric), color='red', label='Trend Line')
 
 
     for i, txt in enumerate(prices):
-        plt.annotate(f'{txt:.2f}', (years_numeric[i], prices[i]), textcoords="offset points", xytext=(0, 10), ha='center')
+        plt.annotate(f'{txt:.2f}', (years_numeric[i], prices[i]), textcoords="offset points", xytext=(0, 10), ha='center', va='center',fontsize=7)
 
     plt.title('Average Monthly Energy Prices for Home Heating')
     plt.xlabel('Year and Month')

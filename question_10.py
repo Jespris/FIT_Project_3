@@ -24,15 +24,22 @@ def plot_data_question_10(values_by_year):
     polynomial = np.poly1d(coefficients)
 
     plt.figure(figsize=(15, 5))  # Increase width
+
+    # this code add value in the graph to each data point
+    # enumare makes values a numerical value
+    for i, txt in enumerate(values):
+        plt.annotate(f'{txt:.2f}', (years[i], values[i]), textcoords="offset points", xytext=(0, 10), ha='center')
+
     plt.plot(years, values, marker='o', label='Average values')
     plt.plot(years, polynomial(years_numeric), color='red', label='Trend Line')
-    plt.plot(years, values, marker='o', linestyle='-')
-    plt.title('Population Changes Over Years')
+    plt.plot(years, values,color='blue',marker='o', linestyle='-')
+    plt.title('Population Changes Over Years in Finland')
     plt.xlabel('Year')
-    plt.ylabel('Total Change')
+    plt.ylabel('Total Change in people')
     plt.grid(True)
     plt.gca().xaxis.set_major_locator(MaxNLocator(integer=True, prune='both', nbins=len(years)//3))  # Reduce the number of X-axis labels
     plt.xticks(rotation=45)  # Rotate labels for better visibility
+    plt.legend() # this shows the labls for each line
     plt.show()
 
 def question_10():
