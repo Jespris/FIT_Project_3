@@ -6,12 +6,8 @@ from matplotlib.ticker import MaxNLocator
 
 
 def extract_and_process_data_question_10(data):
-    values_by_year = {}
-    for entry in data['data']:
-        year = entry['key'][0]
-        value = float(entry['values'][0])
-        values_by_year[year] = value
-        print("Data Loaded:", data)  # Debug: Print the whole data structure
+    values_by_year = {int(data['dataset']['dimension']['Vuosi']['category']['label'][year]): data['dataset']['value'][i] for year, i in data['dataset']['dimension']['Vuosi']['category']['index'].items()}
+    print(f"{values_by_year}")  # Debug: Print the whole data structure
     return values_by_year
 
 
