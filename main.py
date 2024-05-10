@@ -10,7 +10,7 @@ from question_9 import question_9
 
 
 def main():
-    analyse_everything = False
+    analyse_everything = True
 
     # The dictionary below have values that are functions without ()
     # These then get called later on, or if analyse_everything is set to false,
