@@ -8,8 +8,10 @@ from research_data_utils import load_json_data, save_json_data, DATA_FOLDER
 def question_6():
     print("Fråga 6: Ökar elpris till hushåll snabbare än inflation?")
     print("Länk till data: https://pxdata.stat.fi/PxWeb/pxweb/sv/StatFin/StatFin__ehi/statfin_ehi_pxt_13rb.px/")
+    #Fetching data from research data
     el_price_data, inflation_data = get_data()
 
+    #Getting the electricity price of c/kWh of households over 15 000kWh per month
     el_price = parse_el_price_data(el_price_data)
     show_el_price(el_price)
 
@@ -22,6 +24,7 @@ def compare_inflation_to_el_price(el_price, inflation_rate):
     el_price_2009 = el_price['2009M12'] / (inflation_rate['2009'] / 100)
     perdicted_el_price_from_inflation = {}
 
+    #Predicting the inflation price
     for year, inflation in enumerate(inflation_rate.values()):
         perdicted_el_price_from_inflation[year] = int(el_price_2009 * (inflation / 100))
 
@@ -56,6 +59,7 @@ def parse_el_price_data(data):
 
     price = data['value']
 
+    #Extraherar priset för December av varje år från 2009 till 2023
     price_per_month = {year : price[i] for i, year in enumerate(years.values()) if price[i] is not None 
                        and "M12" in year}
         
@@ -73,14 +77,14 @@ def parse_inflation_data(inflation_data):
     return year_inflation
 
 def show_el_price(el_price):
-    
+    #Extrahera tiden och priset
     months = np.array(list(map(str, el_price.keys())))
     price = np.array(list(map(int, el_price.values())))
 
     # Plotta data
     plt.figure(figsize=(10, 6))
     plt.plot(months, price, marker = 'o', linestyle='-')
-    plt.title('El pris i slutet av året från 2009-2023')
+    plt.title('El pris i slutet av året från 2009-2023 för hshåll med el konsumption över 15 000 kWh')
     plt.xlabel('Months')
     plt.ylabel('Price, c/kWh')
     plt.xticks(rotation=45)  # Rotera x-axelns tick-märken för bättre läsbarhet
@@ -95,7 +99,7 @@ def show_el_price(el_price):
 
 
 def get_data():
-
+    #Hämtar datan från research data som är extraherade med retrieve_data() metoden
     return load_json_data('question_6_data.json'), load_json_data('inflation_data.json')
 
 def retrieve_data():
