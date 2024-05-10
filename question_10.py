@@ -4,6 +4,7 @@ import numpy as np
 from research_data_utils import load_json_data
 from matplotlib.ticker import MaxNLocator
 
+
 def extract_and_process_data_question_10(data):
     values_by_year = {}
     for entry in data['data']:
@@ -12,6 +13,7 @@ def extract_and_process_data_question_10(data):
         values_by_year[year] = value
         print("Data Loaded:", data)  # Debug: Print the whole data structure
     return values_by_year
+
 
 def plot_data_question_10(values_by_year):
     years = sorted(values_by_year.keys())
@@ -26,7 +28,7 @@ def plot_data_question_10(values_by_year):
     plt.figure(figsize=(15, 5))  # Increase width
 
     # this code add value in the graph to each data point
-    # enumare makes values a numerical value
+    # enumerate expands the values list into indexes and values
     for i, txt in enumerate(values):
         plt.annotate(f'{txt:.2f}', (years[i], values[i]), textcoords="offset points", xytext=(0, 10), ha='center')
 
@@ -39,8 +41,9 @@ def plot_data_question_10(values_by_year):
     plt.grid(True)
     plt.gca().xaxis.set_major_locator(MaxNLocator(integer=True, prune='both', nbins=len(years)//3))  # Reduce the number of X-axis labels
     plt.xticks(rotation=45)  # Rotate labels for better visibility
-    plt.legend() # this shows the labls for each line
+    plt.legend()  # this shows the labls for each line
     plt.show()
+
 
 def question_10():
     data_question_10 = load_json_data('question_10_data.json')

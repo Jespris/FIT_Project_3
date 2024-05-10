@@ -4,17 +4,17 @@ import numpy as np
 from research_data_utils import load_json_data
 
 
-#9: Hur har energiförbrukning inom industri i finland ändrats från 2010 till 2023? Länk: https://pxdata.stat.fi/PxWeb/pxweb/sv/StatFin/StatFin__ehk/statfin_ehk_pxt_12vk.px/
-
+# 9: Hur har energiförbrukning inom industri i finland ändrats från 2010 till 2023?
+# Länk: https://pxdata.stat.fi/PxWeb/pxweb/sv/StatFin/StatFin__ehk/statfin_ehk_pxt_12vk.px/
 
 
 def question_9():
     # question 9
     print("Accessing question_9_data.json")
 
-    data_question_9 = load_json_data('question_9_data.json') # calls load_json_data from research_data_utils.py
-    average_prices_by_year = extract_and_process_data_question_9(data_question_9) # process the data from question_9_data.json
-    plot_data_question_9(average_prices_by_year) # takes the values from average_prices_by_year and plots the data on a graph
+    data_question_9 = load_json_data('question_9_data.json')  # calls load_json_data from research_data_utils.py
+    average_prices_by_year = extract_and_process_data_question_9(data_question_9)  # process the data from question_9_data.json
+    plot_data_question_9(average_prices_by_year)  # takes the values from average_prices_by_year and plots the data on a graph
 
 
 # Extract and process the energy price data
@@ -48,22 +48,18 @@ def extract_and_process_data_question_9(data):
     return average_values_by_year
 
 
-
-
 # Plot the results
 def plot_data_question_9(average_values_by_year):
     # need to convert dictionaries into list due to that dictionaries are not always ordered
-    years = list(average_values_by_year.keys()) # list() converts a dictionary to a list
-    values = list(average_values_by_year.values()) # () converts values dictionary to a list
+    years = list(average_values_by_year.keys())  # list() converts a dictionary to a list
+    values = list(average_values_by_year.values())  # () converts values dictionary to a list
     years_numeric = np.array(list(map(int, years)))  # Convert years to numeric for polyfit # This is the x values in the graph
-    prices_numeric = np.array(values) # This is the y values in the graph
+    prices_numeric = np.array(values)  # This is the y values in the graph
 
-
-    #this code helps creating the red trend line
+    # this code helps to create the red trend line
     # np.polyfit is fron numpy. It fits a polynmal
     coefficients = np.polyfit(years_numeric, prices_numeric, 2)  # Quadratic fit # polynomal 2 means this a^2+bx+c
     polynomial = np.poly1d(coefficients) # used to create the trend line
-
 
     # Calculate trend line values
     trend_values = polynomial(years_numeric)
@@ -77,21 +73,18 @@ def plot_data_question_9(average_values_by_year):
     plt.figure(figsize=(10, 5))
 
     # this code add value in the graph to each data point
-    # enumare makes values a numerical value
+    # enumerate expands the values list into indexes and values
     for i, txt in enumerate(values):
         plt.annotate(f'{txt:.2f}', (years[i], values[i]), textcoords="offset points", xytext=(0, 10), ha='center')
-
 
     plt.plot(years, values, marker='o',color='blue', label=' GWh values')
     plt.plot(years, polynomial(years_numeric), color='red', label='Trend Line')
 
-
-
     plt.plot(years, values, marker='o')
     plt.title('Average Annual Energy Consumption by Industry')
-    plt.xlabel('Year') #Labesl the X axis
+    plt.xlabel('Year')  # Labesl the X axis
     plt.ylabel('Average Consumption (GWh)')
-    plt.grid(True) # adds a grid to the graph
-    plt.legend() # this shows the labls for each line
+    plt.grid(True)  # adds a grid to the graph
+    plt.legend()  # this shows the labls for each line
     plt.show()
 

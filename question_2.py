@@ -74,7 +74,7 @@ def analyse_data(stud_dict, icke_stud_dict):
                          }
 
     for status, amount in stud_status.items():
-        if status in active_statuses:
+        if status not in active_statuses:
             offset = width * multiplier
             ax.bar(x_loc + offset, amount, width, label=status, bottom=bottom)
             # ax.bar_label(rects, padding=3)
@@ -87,7 +87,6 @@ def analyse_data(stud_dict, icke_stud_dict):
             # bottom -= (amount + compared_amount)
         else:
             print("TODO: show non studying on top")
-
 
     plt.xlabel('År')
     plt.ylabel('Antal')

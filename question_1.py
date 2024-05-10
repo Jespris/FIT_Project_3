@@ -4,7 +4,7 @@ import numpy as np
 import requests
 from matplotlib import pyplot as plt
 import os
-from research_data_utils import load_json_data, save_json_data, DATA_FOLDER
+from research_data_utils import load_json_data, DATA_FOLDER
 
 def question_1():
     print("Fråga 1: Hur har nettoförmögenheten per hushåll ökat jämfört med inflation?")
