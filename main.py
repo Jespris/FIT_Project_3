@@ -30,7 +30,7 @@ def main():
 
     if not analyse_everything:
         # Which specific question do you want analysed?
-        questions[5]()
+        questions[8]()
     else:
         print("Analyzing everything!")
         for value in questions.values():

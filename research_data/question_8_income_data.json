@@ -1,0 +1,83 @@
+{
+  "columns": [
+    {
+      "code": "Vuosi",
+      "text": "År",
+      "type": "t"
+    },
+    {
+      "code": "Alue",
+      "text": "Område",
+      "type": "d"
+    },
+    {
+      "code": "palk",
+      "text": "1. LÖNEINKOMSTER,  medelvärde",
+      "type": "c"
+    }
+  ],
+  "comments": [],
+  "data": [
+    {
+      "key": [
+        "2017",
+        "KU853"
+      ],
+      "values": [
+        "29770"
+      ]
+    },
+    {
+      "key": [
+        "2018",
+        "KU853"
+      ],
+      "values": [
+        "30446"
+      ]
+    },
+    {
+      "key": [
+        "2019",
+        "KU853"
+      ],
+      "values": [
+        "31023"
+      ]
+    },
+    {
+      "key": [
+        "2020",
+        "KU853"
+      ],
+      "values": [
+        "30147"
+      ]
+    },
+    {
+      "key": [
+        "2021",
+        "KU853"
+      ],
+      "values": [
+        "30745"
+      ]
+    },
+    {
+      "key": [
+        "2022",
+        "KU853"
+      ],
+      "values": [
+        "30412"
+      ]
+    }
+  ],
+  "metadata": [
+    {
+      "label": "Bostadshushållens inkomster och inkomststruktur efter År, Område och Uppgifter",
+      "source": "Statistikcentralen, inkomstfördelningsstatistik",
+      "updated": "2023-12-19T06.00.00Z"
+    }
+  ]
+}

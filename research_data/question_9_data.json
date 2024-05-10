@@ -1,1 +1,162 @@
-{"columns":[{"code":"Vuosi","text":"År","comment":"* preliminär uppgift\r\n","type":"t"},{"code":"Energian loppukäytön sektori","text":"Sector","type":"d"},{"code":"maara_gwh","text":"Mängd (GWh)","type":"c"}],"comments":[{"variable":"Vuosi","value":"2023","comment":"* preliminär uppgift\r\n"}],"data":[{"key":["2010","A"],"values":["149533"]},{"key":["2011","A"],"values":["145549"]},{"key":["2012","A"],"values":["140776"]},{"key":["2013","A"],"values":["139777"]},{"key":["2014","A"],"values":["137759"]},{"key":["2015","A"],"values":["135711"]},{"key":["2016","A"],"values":["140011"]},{"key":["2017","A"],"values":["141149"]},{"key":["2018","A"],"values":["145033"]},{"key":["2019","A"],"values":["143330"]},{"key":["2020","A"],"values":["133478"]},{"key":["2021","A"],"values":["139116"]},{"key":["2022","A"],"values":["126455"]},{"key":["2023","A"],"values":["123881"]}],"metadata":[{"updated":"2024-04-18T05.00.00Z","label":"Slutförbrukning av energi efter sektor efter År, Sector och Uppgifter","source":"Statistikcentralen, energianskaffning och -förbrukning"}]}
+{
+  "columns": [
+    {
+      "code": "Vuosi",
+      "comment": "* preliminär uppgift\r\n",
+      "text": "År",
+      "type": "t"
+    },
+    {
+      "code": "Energian loppukäytön sektori",
+      "text": "Sector",
+      "type": "d"
+    },
+    {
+      "code": "maara_gwh",
+      "text": "Mängd (GWh)",
+      "type": "c"
+    }
+  ],
+  "comments": [
+    {
+      "comment": "* preliminär uppgift\r\n",
+      "value": "2023",
+      "variable": "Vuosi"
+    }
+  ],
+  "data": [
+    {
+      "key": [
+        "2010",
+        "A"
+      ],
+      "values": [
+        "149533"
+      ]
+    },
+    {
+      "key": [
+        "2011",
+        "A"
+      ],
+      "values": [
+        "145549"
+      ]
+    },
+    {
+      "key": [
+        "2012",
+        "A"
+      ],
+      "values": [
+        "140776"
+      ]
+    },
+    {
+      "key": [
+        "2013",
+        "A"
+      ],
+      "values": [
+        "139777"
+      ]
+    },
+    {
+      "key": [
+        "2014",
+        "A"
+      ],
+      "values": [
+        "137759"
+      ]
+    },
+    {
+      "key": [
+        "2015",
+        "A"
+      ],
+      "values": [
+        "135711"
+      ]
+    },
+    {
+      "key": [
+        "2016",
+        "A"
+      ],
+      "values": [
+        "140011"
+      ]
+    },
+    {
+      "key": [
+        "2017",
+        "A"
+      ],
+      "values": [
+        "141149"
+      ]
+    },
+    {
+      "key": [
+        "2018",
+        "A"
+      ],
+      "values": [
+        "145033"
+      ]
+    },
+    {
+      "key": [
+        "2019",
+        "A"
+      ],
+      "values": [
+        "143330"
+      ]
+    },
+    {
+      "key": [
+        "2020",
+        "A"
+      ],
+      "values": [
+        "133478"
+      ]
+    },
+    {
+      "key": [
+        "2021",
+        "A"
+      ],
+      "values": [
+        "139116"
+      ]
+    },
+    {
+      "key": [
+        "2022",
+        "A"
+      ],
+      "values": [
+        "126455"
+      ]
+    },
+    {
+      "key": [
+        "2023",
+        "A"
+      ],
+      "values": [
+        "123881"
+      ]
+    }
+  ],
+  "metadata": [
+    {
+      "label": "Slutförbrukning av energi efter sektor efter År, Sector och Uppgifter",
+      "source": "Statistikcentralen, energianskaffning och -förbrukning",
+      "updated": "2024-04-18T05.00.00Z"
+    }
+  ]
+}
