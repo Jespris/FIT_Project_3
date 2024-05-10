@@ -7,6 +7,7 @@ from question_6 import question_6
 from question_7 import question_7
 from question_8 import question_8
 from question_9 import question_9
+from question_10 import question_10
 
 
 def main():
@@ -26,6 +27,7 @@ def main():
         7: question_7,
         8: question_8,
         9: question_9,
+        10: question_10,
     }
 
     if not analyse_everything:
