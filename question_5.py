@@ -28,7 +28,7 @@ def compare_new_cars_to_total(new_cars, total_cars):
 
     plt.figure(figsize=(10, 6))
     plt.plot(new_cars_years, new_cars_amount, label = "New cars", linestyle = "-")
-    plt.plot(total_cars_years, total_cars_amount, label = "Total cars", linestyle = "--")
+    plt.plot(total_cars_years, total_cars_amount, label = "Total cars", linestyle = "-")
     plt.title("Comparsion between new and total amount of cars")
     plt.xlabel("Years")
     plt.ylabel("Amount")
@@ -85,8 +85,9 @@ def show_total_cars(total_cars):
     years = []
     amount = []
     for i in total_cars:
-        years.append(i[0])
-        amount.append(i[1])
+        if i[0] >= 1960:
+            years.append(i[0])
+            amount.append(i[1])
 
     plt.figure(figsize=(10, 6))
     plt.plot(years, amount, linestyle='-')
