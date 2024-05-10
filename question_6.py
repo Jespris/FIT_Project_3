@@ -8,16 +8,13 @@ from research_data_utils import load_json_data, save_json_data, DATA_FOLDER
 def question_6():
     print("Fråga 6: Ökar elpris till hushåll snabbare än inflation?")
     print("Länk till data: https://pxdata.stat.fi/PxWeb/pxweb/sv/StatFin/StatFin__ehi/statfin_ehi_pxt_13rb.px/")
-
-    retrieve_data()
-
     el_price_data, inflation_data = get_data()
 
     el_price = parse_el_price_data(el_price_data)
-    #show_el_price(el_price)
+    show_el_price(el_price)
 
     inflation_rate = parse_inflation_data(inflation_data)
-    #compare_inflation_to_el_price(el_price, inflation_rate)
+    compare_inflation_to_el_price(el_price, inflation_rate)
 
 
 def compare_inflation_to_el_price(el_price, inflation_rate):
@@ -39,7 +36,7 @@ def compare_inflation_to_el_price(el_price, inflation_rate):
     # plot data
     plt.figure(figsize=(10, 6))
     plt.plot(predicted_years, predicted_el_price, marker='o', linestyle='-', label='Baserad på inflation')
-    plt.plot(actual_years, actula_price, marker='o', linestyle='--', label='Faktiska priset')
+    plt.plot(actual_years, actula_price, marker='o', linestyle='-', label='Faktiska priset')
     plt.title('El pris för samtliga hushåll med över 15 000 kWh jämfört med inflation 2009-2023')
     plt.xlabel('År')
     plt.ylabel('Pris (c/kWh)')
