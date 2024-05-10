@@ -41,7 +41,7 @@ def plot_data_question_10(values_by_year):
     plt.grid(True)
     plt.gca().xaxis.set_major_locator(MaxNLocator(integer=True, prune='both', nbins=len(years)//3))  # Reduce the number of X-axis labels
     plt.xticks(rotation=45)  # Rotate labels for better visibility
-    plt.legend()  # this shows the labls for each line
+    plt.legend()  # this shows the labels for each line
     plt.show()
 
 
