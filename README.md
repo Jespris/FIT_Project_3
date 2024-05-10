@@ -18,14 +18,14 @@ Länk: https://pxdata.stat.fi/PxWeb/pxweb/sv/StatFin/StatFin__merek/statfin_mere
 6: Ökar elpris till hushåll snabbare än inflation?
 Länk: https://pxdata.stat.fi/PxWeb/pxweb/sv/StatFin/StatFin__ehi/statfin_ehi_pxt_13rb.px/
 
-7. hur mycket har priset för att värma hem ökat med de senate 10 åren?
+7. hur mycket har priset för att värma hem ändrats de senaste 3 åren? Varför har priset ändrats? 
 https://pxdata.stat.fi/PxWeb/pxweb/sv/StatFin/StatFin__ehi/statfin_ehi_pxt_13nl.px/
 
 8: Hur ökar den genomsnitta hyreskostanden per m^2 i gemförelse med inkomst
 Länk: https://pxdata.stat.fi:443/PxWeb/api/v1/sv/StatFin/asvu/statfin_asvu_pxt_11x4.px
 
-9: Hur har energiförbrukning inom industri i finland ändrats från 2010 till 2023?
+9: Hur har energiförbrukning inom industri i Finland ändrats från 2010 till 2023? Vad har orsakat för ändringen? 
 Länk: https://pxdata.stat.fi/PxWeb/pxweb/sv/StatFin/StatFin__ehk/statfin_ehk_pxt_12vk.px/
 
-10: Hur har befolkningsförändringen förändrats i finland från 1990 till 2022?
+10: Hur har befolkningsförändringen förändrats i finland från 1990 till 2022? Vad har orsakat förändring-en?
 Länk: https://pxdata.stat.fi/PxWeb/pxweb/sv/StatFin/StatFin__kuol/statfin_kuol_pxt_12au.px/
