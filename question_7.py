@@ -31,10 +31,7 @@ def extract_and_process_data_question_7(data):
     # prices_by_year is a dictionary not an array
     # Iterate over the data
     for item in data['data']:
-        # [0][:4] extract a substring from a string located at a specific index in a list
-        # extracts the first four characters of the string.
-        # year_month = item['key'][0][:4]  # Extract the year from the 'key' which is in the format 'YYYYMM'
-        # year_month = item['key'][0][:4] takes out 202002 from "2020M02"
+
 
         year_month = item['key'][0]
         price = float(item['values'][0])  # Convert price to float
@@ -67,7 +64,7 @@ def plot_data_question_7(average_prices_by_year):
     coefficients = np.polyfit(years_numeric, prices, 2)
     polynomial = np.poly1d(coefficients)
 
-    plt.figure(figsize=(18, 8))
+    plt.figure(figsize=(16, 8))
     plt.plot(years_numeric, prices, marker='o', label='Average Price')
     plt.plot(years_numeric, polynomial(years_numeric), color='red', label='Trend Line')
 

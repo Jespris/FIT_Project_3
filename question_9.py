@@ -42,6 +42,7 @@ def extract_and_process_data_question_9(data):
     # This is a new dictionary year: sum(values) / len(values)
     # average_values_by_year does not really calculate an average. it just value/year. this is done to convert the value to a form that np.polyfit can use for the trend line
     average_values_by_year = {year: sum(values) / len(values) for year, values in values_by_year.items()} #calculates average value of each year for each value in values_by_year
+
     # average_values_by_year makes the values in the dictionary into numerical values that can be used in  coefficients = np.polyfit(years_numeric, prices_numeric
     print("average_values_by_year:", average_values_by_year)
     print("Data Loaded:", data)  # Debug: Print the whole data structure
