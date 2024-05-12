@@ -9,13 +9,6 @@ from matplotlib.ticker import MaxNLocator
 
 def extract_and_process_data_question_10(data):
 
-   # values_by_year = {}
-   # for entry in data['data']:
-   #     year = entry['key'][0]
-   #     value = float(entry['values'][0])
-   #     values_by_year[year] = value
-   #     print("Data Loaded:", data)  # Debug: Print the whole data structure
-   # return values_by_year
 
 
     values_by_year = {}
@@ -62,7 +55,7 @@ def plot_data_question_10(values_by_year):
     plt.plot(years, polynomial(years_numeric), color='red', label='Trend Linje')
     plt.plot(years, values,color='blue',marker='o', linestyle='-')
     #plt.title('Population Changes Over Years in Finland')
-    plt.title('Hur har befolkningsförändringen utvecklats i finland från 1990 till 2022')
+    plt.title('Fråga 10: Hur har befolkningsförändringen utvecklats i finland från 1990 till 2022')
     plt.xlabel('År')
     plt.ylabel('Totala befolknings förändringen (personer)')
     plt.grid(True)
@@ -73,6 +66,8 @@ def plot_data_question_10(values_by_year):
 
 
 def question_10():
+    print("Fråga 10: Hur har befolkningsförändringen förändrats i finland från 1990 till 2022? Vad har orsakat förändring-en?")
+    print("Länk:  https://pxdata.stat.fi/PxWeb/pxweb/sv/StatFin/StatFin__kuol/statfin_kuol_pxt_12au.px/")
     data_question_10 = load_json_data('question_10_data.json')
     values_by_year = extract_and_process_data_question_10(data_question_10)
     plot_data_question_10(values_by_year)

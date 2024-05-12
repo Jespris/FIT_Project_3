@@ -13,19 +13,18 @@ def year_month_to_numeric(year_month):
 
 def question_7():  # main function for question 7
     # question 7
+    print("Fråga 7: Hur mycket har priset för att värma hem ändrats de senaste 3 åren? Varför har priset ändrats?")
+    print("Länk:  https://pxdata.stat.fi/PxWeb/pxweb/sv/StatFin/StatFin__ehi/statfin_ehi_pxt_13nl.px/")
     data_question_7 = load_json_data('question_7_data.json')
-    average_prices_by_year = extract_and_process_data_question_7(data_question_7)
-    plot_data_question_7(average_prices_by_year)
-    # print(dir(year_month))
-    # feb_2020_prices = prices_by_year.get('202102')
-    # print(feb_2020_prices)
+    prices_by_year_question_7 = extract_and_process_data_question_7(data_question_7)
+    plot_data_question_7(prices_by_year_question_7)
+
 
 
 # Extract and process the energy price data
 def extract_and_process_data_question_7(data):
 
-    # years = []
-    # prices = []
+
 
     prices_by_year = {}
     # prices_by_year is a dictionary not an array
@@ -44,20 +43,18 @@ def extract_and_process_data_question_7(data):
         else:  # the year is not in the dictionary -> add new entry as list of prices
             prices_by_year[year_month] = [price]
 
-    # Calculate the average price for each year
-    # prices_by_year.items() is a tuple of key, value
-    # average_prices_by_year = {year: sum(prices) / len(prices) for year, prices in prices_by_year.items()}
 
-    average_prices_by_year = {year: sum(prices) / len(prices) for year, prices in prices_by_year.items()}
+
+    prices_by_year_question_7 = {year: sum(prices) / len(prices) for year, prices in prices_by_year.items()}
     print("Data Loaded:", data)  # Debug: Print the whole data structure
-    return average_prices_by_year
+    return prices_by_year_question_7
 
 
 # Plot the results
-def plot_data_question_7(average_prices_by_year):
+def plot_data_question_7(prices_by_year_question_7):
     # sorts the years and months in chronological order
-    sorted_years = sorted(average_prices_by_year.keys(), key=lambda x: year_month_to_numeric(x)) #Sorted years sets 2020M01 2020M02 etc
-    prices = [average_prices_by_year[ym] for ym in sorted_years]  # this tells the code what order the years are in
+    sorted_years = sorted(prices_by_year_question_7.keys(), key=lambda x: year_month_to_numeric(x)) #Sorted years sets 2020M01 2020M02 etc
+    prices = [prices_by_year_question_7[ym] for ym in sorted_years]  # this tells the code what order the years are in
     years_numeric = np.array([year_month_to_numeric(ym) for ym in sorted_years])  # converts years into numeric values
     # Years numeric is the x-axis
 
@@ -79,9 +76,9 @@ def plot_data_question_7(average_prices_by_year):
             fontsize=7
         )
 
-    plt.title('Average Monthly Energy Prices for Home Heating')
-    plt.xlabel('Year and Month')
-    plt.ylabel('Average Price (euro/MWh)')
+    plt.title('Fråga 7: Genomsnittliga månatliga energipriser för uppvärmning av bostäder')
+    plt.xlabel('År och månad')
+    plt.ylabel('Genomsnittligt pris (euro/MWh)')
 
     # Adjust x-ticks to show year-month labels
     plt.xticks(years_numeric, sorted_years, rotation=45)  # Rotate x-axis labels for better readability

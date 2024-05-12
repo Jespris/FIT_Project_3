@@ -9,12 +9,14 @@ from research_data_utils import load_json_data
 
 
 def question_9():
+    print("Fråga 9: Hur har energiförbrukning inom industri i Finland ändrats från 2010 till 2023? Vad har orsakat för ändringen?")
+    print("Länk:  https://pxdata.stat.fi/PxWeb/pxweb/sv/StatFin/StatFin__ehk/statfin_ehk_pxt_12vk.px/")
     # question 9
     print("Accessing question_9_data.json")
 
     data_question_9 = load_json_data('question_9_data.json')  # calls load_json_data from research_data_utils.py
-    average_prices_by_year = extract_and_process_data_question_9(data_question_9)  # process the data from question_9_data.json
-    plot_data_question_9(average_prices_by_year)  # takes the values from average_prices_by_year and plots the data on a graph
+    prices_by_year_9 = extract_and_process_data_question_9(data_question_9)  # process the data from question_9_data.json
+    plot_data_question_9(prices_by_year_9)  # takes the values from prices_by_year_9 and plots the data on a graph
 
 
 # Extract and process the energy price data
@@ -78,12 +80,12 @@ def plot_data_question_9(average_values_by_year):
     for i, txt in enumerate(values):
         plt.annotate(f'{txt:.2f}', (years[i], values[i]), textcoords="offset points", xytext=(0, 10), ha='center')
 
-    plt.plot(years, values, marker='o',color='blue', label=' GWh values')
-    plt.plot(years, polynomial(years_numeric), color='red', label='Trend Line')
+    plt.plot(years, values, marker='o',color='blue', label=' GWh värden')
+    plt.plot(years, polynomial(years_numeric), color='red', label='Trend linje')
 
     plt.plot(years, values, marker='o')
-    plt.title('Average Annual Energy Consumption by Industry')
-    plt.xlabel('Year')  # Labesl the X axis
+    plt.title('Fråga 9: Genomsnittlig årlig energiförbrukning inom industri')
+    plt.xlabel('År')  # Labesl the X axis
     plt.ylabel('Average Consumption (GWh)')
     plt.grid(True)  # adds a grid to the graph
     plt.legend()  # this shows the labls for each line
