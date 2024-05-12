@@ -11,7 +11,7 @@ from question_10 import question_10
 
 
 def main():
-    analyse_everything = False
+    analyse_everything = True
 
     # The dictionary below have values that are functions without ()
     # These then get called later on, or if analyse_everything is set to false,
@@ -31,7 +31,7 @@ def main():
 
     if not analyse_everything:
         # Which specific question do you want analysed?
-        questions[2]()
+        questions[1]()
     else:
         print("Analyzing everything!")
         for value in questions.values():
