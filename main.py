@@ -16,7 +16,6 @@ def main():
     # The dictionary below have values that are functions without ()
     # These then get called later on, or if analyse_everything is set to false,
     # then choose the specific question to analyse
-    # TODO: add all the questions starting function to this dictionary
     questions = {
         1: question_1,
         2: question_2,
@@ -32,7 +31,7 @@ def main():
 
     if not analyse_everything:
         # Which specific question do you want analysed?
-        questions[10]()
+        questions[2]()
     else:
         print("Analyzing everything!")
         for value in questions.values():

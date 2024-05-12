@@ -9,7 +9,7 @@ def question_2():
     print("Länk till data: https://pxdata.stat.fi/PxWeb/pxweb/sv/StatFin/StatFin__khak/statfin_khak_pxt_13tq.px")
 
     data = load_json_data("question_2_data.json")
-    print(data)
+    # print(data)
     stud_dict, icke_stud_dict = parse_data(data)
     analyse_data(stud_dict, icke_stud_dict)
 
@@ -41,14 +41,14 @@ def analyse_data(stud_dict, icke_stud_dict):
         not_second_year.append(value[2])
         not_third_year.append(value[3])
 
-    immediate = tuple(map(lambda x: x if x is not None else 0, immediate))
-    first_year = tuple(map(lambda x: x if x is not None else 0, first_year))
-    second_year = tuple(map(lambda x: x if x is not None else 0, second_year))
-    third_year = tuple(map(lambda x: x if x is not None else 0, third_year))
-    not_immediate = tuple(map(lambda x: x if x is not None else 0, not_immediate))
-    not_first_year = tuple(map(lambda x: x if x is not None else 0, not_first_year))
-    not_second_year = tuple(map(lambda x: x if x is not None else 0, not_second_year))
-    not_third_year = tuple(map(lambda x: x if x is not None else 0, not_third_year))
+    immediate = map_tuples(immediate)
+    first_year = map_tuples(first_year)
+    second_year = map_tuples(second_year)
+    third_year = map_tuples(third_year)
+    not_immediate = map_tuples(not_immediate)
+    not_first_year = map_tuples(not_first_year)
+    not_second_year = map_tuples(not_second_year)
+    not_third_year = map_tuples(not_third_year)
 
     stud_status['Studerar omedelbart'] = immediate
     stud_status['1 år efter'] = first_year
@@ -64,38 +64,53 @@ def analyse_data(stud_dict, icke_stud_dict):
     multiplier = 0
 
     fig, ax = plt.subplots(layout='constrained')
-    bottom = np.zeros(8)
 
     active_statuses = ['Studerar omedelbart', '1 år efter', '2 år efter', '3 år efter']
+    # Keep track of the relation between active and non-active study statuses
     comparison_status = {'Studerar omedelbart': 'Studerar inte omedelbart',
                          '1 år efter': 'inte 1 år efter',
                          '2 år efter': 'inte 2 år efter',
                          '3 år efter': 'inte 3 år efter'
                          }
 
-    for status, amount in stud_status.items():
-        if status not in active_statuses:
-            offset = width * multiplier
-            ax.bar(x_loc + offset, amount, width, label=status, bottom=bottom)
-            # ax.bar_label(rects, padding=3)
-            multiplier += 1
-            # bottom += amount
-            # show the comparison bar on top
-            # compared_status = comparison_status[status]
-            # compared_amount = stud_status[compared_status]
-            # ax.bar(x_loc + offset, compared_amount, width, label=compared_status, bottom=bottom)
-            # bottom -= (amount + compared_amount)
-        else:
-            print("TODO: show non studying on top")
+    for active_status in active_statuses:
+        offset = width * multiplier  # the x-offset in the graph
+        compared_status = comparison_status[active_status]  # the inverse status
+        # show the non-studying amount below, and studying on top
+        # get the values for the graph bars
+        non_amount = stud_status[compared_status]
+        amount = stud_status[active_status]
+        # display the non-studying bar
+        ax.bar(x_loc + offset, non_amount, width, color='red', edgecolor='black', linewidth=1)
+        # display the studying bar on top of the previous bar
+        ax.bar(x_loc + offset, amount, width, bottom=non_amount, color='green', edgecolor='black', linewidth=1)
 
-    plt.xlabel('År')
+        # increment the x-location of bars offset
+        multiplier += 1
+
+    plt.xlabel('Utexamineringsår')
     plt.ylabel('Antal')
-    plt.title('Situation efter studentexamen')
+    plt.title('Studerande-situation hos studenter up till 3 år efter studentexamen')
     ax.set_xticks(x_loc + width, years)
-    plt.legend(ncols=2)
-    ax.set_ylim(0, 50000)
+
+    # Custom legend made by ChatGPT
+    # Define custom legend labels and colors
+    legend_labels = {'(red)': 'Studerar inte', '(green)': 'Studerar'}
+    legend_colors = {'(red)': 'red', '(green)': 'green'}
+
+    # Create custom legend handles
+    legend_handles = [plt.Rectangle((0, 0), 1, 1, color=color) for color in legend_colors.values()]
+
+    # Create the legend with custom labels and handles
+    plt.legend(legend_handles, legend_labels.values(), loc='upper right')
+    ax.set_ylim(0, 40000)
 
     plt.show()
+
+
+def map_tuples(my_list):
+    # Helper function to remove Null values when mapping data in the analyze data function
+    return tuple(map(lambda x: x if x is not None else 0, my_list))
 
 
 def parse_data(data):
@@ -133,8 +148,8 @@ def parse_data(data):
                 og_tuple = (None, None, None, None)
             icke_studerande_dict[year] = og_tuple[:index] + (antal,) + og_tuple[index+1:]
 
-    print(f"Studerande dict: {studerande_dict}")
-    print(f"Icke-studerande dict: {icke_studerande_dict}")
+    # print(f"Studerande dict: {studerande_dict}")
+    # print(f"Icke-studerande dict: {icke_studerande_dict}")
 
     return studerande_dict, icke_studerande_dict
 

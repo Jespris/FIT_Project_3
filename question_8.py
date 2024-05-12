@@ -69,7 +69,7 @@ def compare_income_to_rent(median_monthly_rent_per_quarter, median_income_per_ye
 
 def question_8():
     print("Fråga 8: Hur ökar den genomsnittliga hyreskostnaden i jämförelse med median-inkomsten i Åbo?")
-    print("Länk: https://pxdata.stat.fi:443/PxWeb/api/v1/sv/StatFin/asvu/statfin_asvu_pxt_11x4.px")
+    print("Länk: https://pxdata.stat.fi/PxWeb/pxweb/sv/StatFin/StatFin__asvu/statfin_asvu_pxt_11x4.px/")
 
     rent_cost_data = load_json_data("question_8_rent_data.json")
     income_data = load_json_data("question_8_income_data.json")
