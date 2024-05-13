@@ -8,9 +8,13 @@ def question_2():
     print("Fråga 2: Vad är andelen som fortsätter studier efter studentexamen jämfört med de som inte studerar")
     print("Länk till data: https://pxdata.stat.fi/PxWeb/pxweb/sv/StatFin/StatFin__khak/statfin_khak_pxt_13tq.px")
 
+    # Load the data from the json file
     data = load_json_data("question_2_data.json")
     # print(data)
+    # parse the json data into two different dictionaries, one for keeping track of those that resume studying,
+    # and the other one for keeping track of those who choose not to continue studying
     stud_dict, icke_stud_dict = parse_data(data)
+    # display this data in a complicated grouped, stacked bar graph format
     analyse_data(stud_dict, icke_stud_dict)
 
 
@@ -18,7 +22,8 @@ def analyse_data(stud_dict, icke_stud_dict):
     # Sätt x-axel och y-värden i olika np arrays
     years = list(stud_dict.keys())
 
-    stud_status = {}
+    # initialisera variabler som skall fyllas med data
+    stud_status = {}  # dict har formen {'status': [lista med värden]}
     immediate = []
     first_year = []
     second_year = []
@@ -28,28 +33,30 @@ def analyse_data(stud_dict, icke_stud_dict):
     not_second_year = []
     not_third_year = []
     for value in stud_dict.values():
-        # we now have a tuple, example (nr, nr, None, None)
+        # value is a tuple, example (nr, nr, None, None)
         immediate.append(value[0])
         first_year.append(value[1])
         second_year.append(value[2])
         third_year.append(value[3])
 
     for value in icke_stud_dict.values():
-        # we now have a tuple, example (nr, nr, None, None)
+        # value is a tuple, example (nr, nr, None, None)
         not_immediate.append(value[0])
         not_first_year.append(value[1])
         not_second_year.append(value[2])
         not_third_year.append(value[3])
 
-    immediate = map_tuples(immediate)
-    first_year = map_tuples(first_year)
-    second_year = map_tuples(second_year)
-    third_year = map_tuples(third_year)
-    not_immediate = map_tuples(not_immediate)
-    not_first_year = map_tuples(not_first_year)
-    not_second_year = map_tuples(not_second_year)
-    not_third_year = map_tuples(not_third_year)
+    # fix_tuples function refactors the lists to tuples and replaces None values with 0 to not get errors
+    immediate = fix_tuples(immediate)
+    first_year = fix_tuples(first_year)
+    second_year = fix_tuples(second_year)
+    third_year = fix_tuples(third_year)
+    not_immediate = fix_tuples(not_immediate)
+    not_first_year = fix_tuples(not_first_year)
+    not_second_year = fix_tuples(not_second_year)
+    not_third_year = fix_tuples(not_third_year)
 
+    # map the statuses to the tuples
     stud_status['Studerar omedelbart'] = immediate
     stud_status['1 år efter'] = first_year
     stud_status['2 år efter'] = second_year
@@ -61,7 +68,7 @@ def analyse_data(stud_dict, icke_stud_dict):
 
     x_loc = np.arange(len(years))  # the label locations
     width = 0.2  # the width of the bars
-    multiplier = 0
+    multiplier = 0  # multiplier used with the bar width to update the x_loc of the bars
 
     fig, ax = plt.subplots(layout='constrained')
 
@@ -76,7 +83,7 @@ def analyse_data(stud_dict, icke_stud_dict):
     for active_status in active_statuses:
         offset = width * multiplier  # the x-offset in the graph
         compared_status = comparison_status[active_status]  # the inverse status
-        # show the non-studying amount below, and studying on top
+        # show the non-studying amount below in red, and studying on top in green
         # get the values for the graph bars
         non_amount = stud_status[compared_status]
         amount = stud_status[active_status]
@@ -103,13 +110,13 @@ def analyse_data(stud_dict, icke_stud_dict):
 
     # Create the legend with custom labels and handles
     plt.legend(legend_handles, legend_labels.values(), loc='upper right')
-    ax.set_ylim(0, 40000)
+    ax.set_ylim(0, 40000)  # constrain the y-axis for it to make sense
 
     plt.show()
 
 
-def map_tuples(my_list):
-    # Helper function to remove Null values when mapping data in the analyze data function
+def fix_tuples(my_list):
+    # Helper function to replace Null values with 0 when mapping data in the analyse_data function
     return tuple(map(lambda x: x if x is not None else 0, my_list))
 
 
@@ -126,7 +133,7 @@ def parse_data(data):
         try:
             antal = int(point['values'][0])  # Extrahera antalet
         except ValueError:
-            antal = None
+            antal = None  # we set antal to None to keep consistent list sizes, None values get handled later
 
         # Lägg till antalet i rätt dictionary och position baserat på studiestatus
         index = status
@@ -137,15 +144,17 @@ def parse_data(data):
 
         if status < 10 and point['key'][3] != '00':  # studiestatus (0, 1, 2, 3)
             if year in studerande_dict:
-                og_tuple = studerande_dict[year]
+                og_tuple = studerande_dict[year]  # året har initialiseras, get the tuple
             else:
-                og_tuple = (None, None, None, None)  # året har inte initialiseras
-            studerande_dict[year] = og_tuple[:index] + (antal,) + og_tuple[index+1:]
-        else:  # studiestatus 00, 10, 20, 30
+                og_tuple = (None, None, None, None)  # året har inte initialiseras, create a None tuple
+
+            studerande_dict[year] = og_tuple[:index] + (antal,) + og_tuple[index+1:]  # update the tuple
+        else:  # studiestatus 00, 10, 20, 30, same structure as above but now add to the non-studying dictionary
             if year in icke_studerande_dict:
                 og_tuple = icke_studerande_dict[year]
             else:
                 og_tuple = (None, None, None, None)
+
             icke_studerande_dict[year] = og_tuple[:index] + (antal,) + og_tuple[index+1:]
 
     # print(f"Studerande dict: {studerande_dict}")

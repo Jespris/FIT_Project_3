@@ -1,7 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from research_data_utils import load_json_data
-from adjustText import adjust_text
 
 
 def year_month_to_numeric(year_month):
@@ -20,17 +19,13 @@ def question_7():  # main function for question 7
     plot_data_question_7(prices_by_year_question_7)
 
 
-
 # Extract and process the energy price data
 def extract_and_process_data_question_7(data):
-
-
 
     prices_by_year = {}
     # prices_by_year is a dictionary not an array
     # Iterate over the data
     for item in data['data']:
-
 
         year_month = item['key'][0]
         price = float(item['values'][0])  # Convert price to float
@@ -43,8 +38,6 @@ def extract_and_process_data_question_7(data):
         else:  # the year is not in the dictionary -> add new entry as list of prices
             prices_by_year[year_month] = [price]
 
-
-
     prices_by_year_question_7 = {year: sum(prices) / len(prices) for year, prices in prices_by_year.items()}
     print("Data Loaded:", data)  # Debug: Print the whole data structure
     return prices_by_year_question_7
@@ -53,7 +46,8 @@ def extract_and_process_data_question_7(data):
 # Plot the results
 def plot_data_question_7(prices_by_year_question_7):
     # sorts the years and months in chronological order
-    sorted_years = sorted(prices_by_year_question_7.keys(), key=lambda x: year_month_to_numeric(x)) #Sorted years sets 2020M01 2020M02 etc
+    sorted_years = sorted(prices_by_year_question_7.keys(), key=lambda x: year_month_to_numeric(x))
+    # Sorted years sets 2020M01 2020M02 etc
     prices = [prices_by_year_question_7[ym] for ym in sorted_years]  # this tells the code what order the years are in
     years_numeric = np.array([year_month_to_numeric(ym) for ym in sorted_years])  # converts years into numeric values
     # Years numeric is the x-axis

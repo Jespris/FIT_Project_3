@@ -8,7 +8,7 @@ def question_4():
     print("Länk till data: https://pxdata.stat.fi/PxWeb/pxweb/sv/StatFin/StatFin__pvaa/statfin_pvaa_pxt_14nn.px")
 
     voting_data = get_stats()
-    print(f"Data: {voting_data}")
+    # print(f"Data: {voting_data}")
     votes_by_income = parse_data(voting_data)  # dictionary of votes per income quantile
     analyse_data(votes_by_income)
 
@@ -34,7 +34,7 @@ def analyse_data(votes_by_income):
     ax.set_xticklabels(income_quantiles)
     ax.legend()
 
-    # Lägg till text på varje stapel med exakta värden, ChatGPT e bra på sånhänt :)
+    # Lägg till text på varje stapel med exakta värden, ChatGPT har använts för att generera denna kod
     for i in range(len(income_quantiles)):
         ax.text(bars1[i].get_x() + bars1[i].get_width() / 2, bars1[i].get_height(), f'{ratio_round_one[i]:.1f}%',
                 ha='center', va='bottom')
@@ -46,7 +46,7 @@ def analyse_data(votes_by_income):
 
 
 def parse_data(data) -> {str: int}:
-    # Använde ChatGPT för att snabbt hitta rätta keys
+    # Använde ChatGPT för att snabbt hitta rätta keys i json filen
     # Extrahera data för inkomstkvintiler och använda rösträtter
     vote_ratio_per_income = {}
     # dictionary with structure {income_quantile: (ratio_of_voters_first_round, ratio_of_voters_second_round)}

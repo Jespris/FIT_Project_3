@@ -27,8 +27,8 @@ def compare_new_cars_to_total(new_cars, total_cars):
     total_cars_amount = total_cars[1]
 
     plt.figure(figsize=(10, 6))
-    plt.plot(new_cars_years, new_cars_amount, label = "New cars", linestyle = "-")
-    plt.plot(total_cars_years, total_cars_amount, label = "Total cars", linestyle = "-")
+    plt.plot(new_cars_years, new_cars_amount, label="New cars", linestyle="-")
+    plt.plot(total_cars_years, total_cars_amount, label="Total cars", linestyle="-")
     plt.title("Comparsion between new and total amount of cars")
     plt.xlabel("Years")
     plt.ylabel("Amount")
@@ -43,8 +43,7 @@ def parse_new_cars(new_cars_data):
     for point in new_cars_data['data']:
         year = int(point['key'][1])
         amount = int(point['values'][0])
-
-        amount_per_year.append((year,amount))
+        amount_per_year.append((year, amount))
     return amount_per_year
 
 
@@ -57,7 +56,7 @@ def show_new_cars(new_cars):
         amount.append(i[1])
 
     plt.figure(figsize=(10, 6))
-    plt.plot(years,amount, marker = 'o', linestyle = '-')
+    plt.plot(years, amount, marker='o', linestyle='-')
     plt.title("New cars")
     plt.xlabel("years")
     plt.ylabel("amount")
@@ -76,7 +75,7 @@ def parse_total_cars(total_cars_data):
         year = int(point['key'][0])
         amount = int(point['values'][0])
 
-        amount_per_year.append((year,amount))
+        amount_per_year.append((year, amount))
     return amount_per_year
 
 
